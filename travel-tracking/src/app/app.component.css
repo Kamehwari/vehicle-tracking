@@ -1,0 +1,9 @@
+
+.status[recently_updated=true]:after {
+    background-color : blue
+   }
+   
+   .status[recently_updated=false]:after {
+    background-color : red
+   }
+   

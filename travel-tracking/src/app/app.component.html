@@ -1,0 +1,48 @@
+<nav class="navbar navbar-expand-lg bg-primary">
+  <a style="color: white; font-weight:400 " class="navbar-brand float-left" href="#">Travel Tracking</a>
+</nav>
+<div class="container">
+    <div class="row justify-content-center align-items-center">
+        <div class="col-10">
+          <table class="table">
+              <thead>
+                  <tr>
+                    <th scope="col">Id</th>
+                    <th scope="col">Device Name</th>
+                    <th scope="col">Latitude</th>
+                    <th scope="col">Logitude</th>
+                    <th scope="col">Last Updated</th>
+                    <th scope="col">Recently Update</th>
+                  </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let vehicle of vehiclesList" >
+                  <td>
+                    {{vehicle.deviceId}}
+                  </td>
+                  <td>
+                    {{vehicle.name}}
+                  </td>
+                  <td>
+                      {{vehicle.latitude}}
+                  </td>
+                  <td>
+                      {{vehicle.longitude}}
+                  </td>
+                  <td>
+                      {{vehicle.modifiedDate_gmt}}
+                  </td>
+                  <td *ngIf="vehicle.updatedRecently == true" style="color: green">
+                    {{vehicle.updatedRecently}}
+                  </td>
+                  <td *ngIf="vehicle.updatedRecently == false" style="color: red">
+                      {{vehicle.updatedRecently }}
+                  </td>
+                </tr>
+              </tbody>
+          </table>
+        </div>
+    </div>
+</div>
+
+<router-outlet></router-outlet>
